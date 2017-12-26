@@ -6,7 +6,6 @@
 package bean;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,20 +34,9 @@ public class Adherent implements Serializable {
     private String nomAutreParent;
     private String emailAutreParent;
     private String telAutreParent;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dateAjout ;
-    private int numEnfant;
     
     @OneToMany
     private List<Enfant> enfants;
-
-    public int getNumEnfant() {
-        return numEnfant;
-    }
-
-    public void setNumEnfant(int numEnfant) {
-        this.numEnfant = numEnfant;
-    }
 
     public List<Enfant> getEnfants() {
         return enfants;
@@ -125,14 +113,7 @@ public class Adherent implements Serializable {
         this.telAutreParent = telAutreParent;
     }
 
-    public Date getDateAjout() {
-        return dateAjout;
-    }
-
-    public void setDateAjout(Date dateAjout) {
-        this.dateAjout = new Date();
-    }
-    
+ 
     
     public Long getId() {
         return id;

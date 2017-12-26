@@ -6,12 +6,9 @@
 package controller;
 
 import bean.Adherent;
-import bean.Enfant;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.ejb.EJB;
 import service.AdherentFacade;
 import service.EnfantFacade;
@@ -32,9 +29,10 @@ public class AdherentController implements Serializable {
     @EJB
     private EnfantFacade enfantFacade;
     
-    private List<Enfant> enfants = new ArrayList<>();
     
-     private String text = "0" ;
+    private String text = "0" ;
+    
+    private int numEnf = Integer.parseInt(text);
  
     public String getText() {
         return text;
@@ -43,19 +41,26 @@ public class AdherentController implements Serializable {
         this.text = text;
     }
      
+    
+     
     public void handleKeyEvent() {
         text = text.toUpperCase();
     }
     public String createAdherent(){
-        selected.setNumEnfant(Integer.parseInt(text));
         ejbFacade.create(selected);
         return "/adherent/Confirmation";
     }
     
-    public String createA(){
-        ejbFacade.createAdherent(selected, enfants);
-        return null;
+
+    public int getNumEnf() {
+        return numEnf;
     }
+
+    public void setNumEnf(int numEnf) {
+        this.numEnf = numEnf;
+    }
+    
+    
 
     public Adherent getSelected() {
         if(selected == null){
