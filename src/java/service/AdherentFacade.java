@@ -22,17 +22,6 @@ public class AdherentFacade extends AbstractFacade<Adherent> {
     @PersistenceContext(unitName = "UCPEPU")
     private EntityManager em;
 
-    private EnfantFacade enfantFacade = new EnfantFacade();
-
-    public void createAdherent(Adherent adherent, List<Enfant> enfants) {
-
-        create(adherent);
-        for (Enfant enfant : enfants) {
-            enfant.setAdherent(adherent);
-            enfantFacade.create(enfant);
-        }
-
-    }
 
     @Override
     protected EntityManager getEntityManager() {

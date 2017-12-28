@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/medam/Documents/NetBeansProjects/UCPE/src/conf/persistence.xml</file>
             <file>file:/C:/Users/medam/Documents/NetBeansProjects/UCPE/src/java/bean/Adherent.java</file>
             <file>file:/C:/Users/medam/Documents/NetBeansProjects/UCPE/src/java/controller/AdherentController.java</file>
+            <file>file:/C:/Users/medam/Documents/NetBeansProjects/UCPE/web/adherent/CreateAdherent.xhtml</file>
         </group>
     </open-files>
 </project-private>

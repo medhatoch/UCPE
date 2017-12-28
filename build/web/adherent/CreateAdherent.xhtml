@@ -16,7 +16,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
-            <title>Inscription</title>
+            <title>UCPE Tanger</title>
 
         </f:facet>
 
@@ -194,6 +194,9 @@
                 <br/>
                 <h4>Données tuteur</h4>
                 <p:fieldset>
+                    <p:inputText  placeholder="CIN" id="cin" value="#{adherentController.selected.id}" required="autofocus"/>
+                </p:fieldset>
+                <p:fieldset>
                     <p:inputText  placeholder="Prenom" id="prenom" value="#{adherentController.selected.prenom}" required="autofocus"/>
                 </p:fieldset>
                 <p:fieldset>
@@ -231,16 +234,18 @@
                         <h:form id="Enfantform">
 
                             <p:outputLabel value="Enfant--#{i}" />
-                            <p:inputText placeholder="Nom" id="nom" value="#{enfantController.selected.nom}" required="autofocus"/>
-                            <p:inputText placeholder="Prenom" id="prenom" value="#{enfantController.selected.prenom}" required="autofocus"/>
-                            <p:inputText placeholder="Date de naissance" id="dateDeNaissance" value="#{enfantController.selected.dateDeNaissance}" required="autofocus" >
+                            <p:inputText placeholder="Nom" id="nom" value="#{adherentController.enfant.nom}" required="autofocus"/>
+                            <p:inputText placeholder="Prenom" id="prenom" value="#{adherentController.enfant.prenom}" required="autofocus"/>
+                            <p:inputText placeholder="Date de naissance" id="dateDeNaissance" value="#{adherentController.enfant.dateDeNaissance}" required="autofocus" >
                                 <f:convertDateTime pattern="MM/dd/yyyy" />
                             </p:inputText>
-                            <p:selectOneMenu value="#{enfantController.selected.classe}">
+                            <p:selectOneMenu value="#{adherentController.enfant.classe}">
                                 <f:selectItem  itemLabel="Type d'assurance" itemValue="#{null}"/>
                                 <f:selectItem itemLabel="Global" itemValue="G"/>
                                 <f:selectItem itemLabel="Global+" itemValue="G+"/>
                             </p:selectOneMenu>
+                            
+                            <p:commandButton action="#{adherentController.createEnf()}" value="Ajouter"/>
 
                         </h:form>
                     </c:forEach>
